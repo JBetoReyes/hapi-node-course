@@ -1,0 +1,19 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary": #ea4749,
+  "scondary": #999,
+  "dark": #1C424D,
+  "info": #1c424d,
+  "warning": #f98016,
+  "danger": #f44336,
+  "success": #7b904e,
+  "light": #BA8787
+);
+
+$jumbotron-bg: #0f2126;
+$jumbotron-color: white;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

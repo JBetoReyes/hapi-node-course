@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material';
+import {ModulesModule} from './pages/node/modules/modules.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatIconModule } from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ModulesModule,
     MatIconModule
   ],
   providers: [],
