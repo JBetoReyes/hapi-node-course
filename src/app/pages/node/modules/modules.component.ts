@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModulesComponent implements OnInit {
 
+  lodashSource = `
+const _ = require('lodash');
+_.toUpper('---Hello-world---');
+`;
+
   constructor() { }
 
   ngOnInit() {

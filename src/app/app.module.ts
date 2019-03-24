@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material';
 import {ModulesModule} from './pages/node/modules/modules.module';
+import { RunKitEmbedComponent } from 'angular-runkit';
+import {RunkitModule} from './shared/runkit/runkit.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {ModulesModule} from './pages/node/modules/modules.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ModulesModule,
-    MatIconModule
+    MatIconModule,
+    RunkitModule
   ],
   providers: [],
   bootstrap: [AppComponent]
