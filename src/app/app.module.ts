@@ -9,6 +9,26 @@ import { MatIconModule } from '@angular/material';
 import {ModulesModule} from './pages/node/modules/modules.module';
 import { RunKitEmbedComponent } from 'angular-runkit';
 import {RunkitModule} from './shared/runkit/runkit.module';
+import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
+
+export function markedOptions(): MarkedOptions {
+  const renderer = new MarkedRenderer();
+
+  renderer.blockquote = (text: string) => {
+    return '<blockquote class="blockquote"><p>' + text + '</p></blockquote>';
+  };
+
+  return {
+    renderer: renderer,
+    gfm: true,
+    tables: true,
+    breaks: false,
+    pedantic: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+  };
+}
 
 @NgModule({
   declarations: [
@@ -21,7 +41,13 @@ import {RunkitModule} from './shared/runkit/runkit.module';
     BrowserAnimationsModule,
     ModulesModule,
     MatIconModule,
-    RunkitModule
+    RunkitModule,
+    MarkdownModule.forRoot({
+      markedOptions: {
+        provide: MarkedOptions,
+        useFactory: markedOptions,
+      },
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

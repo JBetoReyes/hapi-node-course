@@ -5,6 +5,17 @@
       <p class="h5">
         A module is any file or directory in the <span class="badge badge-primary">node_modules</span> directory that can be loaded by the Node.js <span class="badge badge-primary">require()</span> function.
       </p>
+      <hr class="my-4">
+      <h4>Require</h4>
+      <ul>
+        <li>Let us load in modules that come bundled with nodejs</li>
+        <li>To load our very own modules</li>
+      </ul>
+      <p class="display-4">
+        Lodash
+        <a href="https://npm.runkit.com/lodash"><img src="https://badge.runkitcdn.com/lodash.svg" alt="Try lodash on RunKit"/></a>
+      </p>
+      <hr class="my-4">
       <p class="h5">
         To be loaded by the Node.js require() function, a module must be one of the following:
       </p>
@@ -15,18 +26,27 @@
         <li>A folder with an index.js file in it.</li>
         <li>A JavaScript file.</li>
       </ul>
-      <hr class="my-4">
-      <h4>Require</h4>
-      <ul>
-        <li>Let us load in modules that come bundled with nodejs</li>
-        <li>To load our very own modules</li>
-      </ul>
-      <hr class="my-4">
-      <p class="display-4">
-        Lodash
-        <a href="https://npm.runkit.com/lodash"><img src="https://badge.runkitcdn.com/lodash.svg" alt="Try lodash on RunKit"/></a>
-      </p>
       <app-runkit [source]="lodashSource"></app-runkit>
+      <markdown ngPreserveWhitespaces lineNumbers>
+        ```bash
+        $ mkdir notes-node
+        $ cd notes-node
+        ```
+      </markdown>
+      <pre class="language-bash command-line" data-user="Beto" data-filter-output="(out)"><code >mkdir notes-node
+cd noted-node
+(out) hello</code></pre>
+      <markdown ngPreserveWhitespaces lineHighlight [line]="'2,3'" [lineOffset]="0" data-type="text/html">
+        > app.js
+        ```javascript
+        console.log('Starting app');
+        const fs = require('fs');
+        fs.appendFile('greetings.txt', 'Hello World');
+        ```
+      </markdown>
+      <pre data-file="style.css"><code class="language-css">p {{ '{' }}
+    color: red
+  {{ '}' }}</code></pre>
 
     </div>
   </div>
