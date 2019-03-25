@@ -12,6 +12,17 @@ const _ = require('lodash');
 _.toUpper('---Hello-world---');
 `;
 
+  lodashInstall = `
+    cd ~ && mkdir lodash && cd ./lodash
+    npm init
+    npm install lodash --save
+  `;
+
+  noteFile = `
+    cd ~
+    mkdir notes-node && cd notes-node
+  `;
+
   constructor() { }
 
   ngOnInit() {
