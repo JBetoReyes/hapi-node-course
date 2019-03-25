@@ -9,7 +9,12 @@
 
   <ul class="navbar-nav mr-auto">
     <li class="nav-item"><a routerLink="es6" class="nav-link">ES6</a></li>
-    <li class="nav-item"><a routerLink="node/modules" class="nav-link">Node</a></li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="nodeDropDown" role="button" data-toggle="dropdown">Node</a>
+      <div class="dropdown-menu">
+        <a routerLink="node/modules" class="dropdown-item">Modules</a>
+      </div>
+    </li>
     <li class="nav-item"><a routerLink="exercises" class="nav-link">Exercises</a></li>
   </ul>
 
