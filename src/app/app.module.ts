@@ -10,6 +10,7 @@ import {ModulesModule} from './pages/node/modules/modules.module';
 import { RunKitEmbedComponent } from 'angular-runkit';
 import {RunkitModule} from './shared/runkit/runkit.module';
 import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
+import {ExercisesModule} from './pages/exercises/exercises.module';
 
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -40,6 +41,7 @@ export function markedOptions(): MarkedOptions {
     AppRoutingModule,
     BrowserAnimationsModule,
     ModulesModule,
+    ExercisesModule,
     MatIconModule,
     RunkitModule,
     MarkdownModule.forRoot({
