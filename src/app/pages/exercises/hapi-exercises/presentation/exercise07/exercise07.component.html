@@ -1,0 +1,35 @@
+<h2 id="exercise-7" class="exercise__item exercise__item--title">Exercise 7</h2>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Requirements</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Add a signup route.</li>
+      <li>Add a login route.</li>
+      <li>Create a new table called <b>"Users"</b></li>
+      <li>A JWT should be returned if the login or signup is successful.</li>
+    </ul>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Considerations</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>A user can't be created if the name is already being used.</li>
+      <li>If a request tries to create a user that already exists, a conflict status should be send</li>
+    </ul>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>References</mat-panel-title>
+    </mat-expansion-panel-header>
+    <a href="https://www.npmjs.com/package/bcrypt#to-hash-a-password" class="ref-btn-link">How to hash a password</a>
+    <a href="https://www.npmjs.com/package/jsonwebtoken#usage" class="ref-btn-link">How to sign a JSON</a>
+    <a href="https://medium.com/@siddharthac6/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e" class="ref-btn-link">JWT tutorial</a>
+    <a href="http://travistidwell.com/jsencrypt/demo/" class="ref-btn-link">JWT key generator</a>
+    <a href="https://hapijs.com/api#-routeoptionspre" class="ref-btn-link">Pre conditions</a>
+  </mat-expansion-panel>
+</mat-accordion>

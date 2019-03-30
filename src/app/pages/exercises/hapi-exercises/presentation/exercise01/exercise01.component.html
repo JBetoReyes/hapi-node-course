@@ -1,147 +1,204 @@
-<a href="/exercises/hapi#Exercise2">Goto E2s</a>
-<h3>Exercise 1</h3>
-<b>Requirements:</b>
-<ul>
-  <li>Create a new server using hapijs</li>
-  <li>Use dotenv to take care of your env variables</li>
-  <li>Create a script to start the app in dev environment <b>(use <span class="badge badge-primary">nodemon</span> in dev)</b></li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://hapijs.com/tutorials/getting-started?lang=en_US">HapiJS</a></li>
-  <li><a href="https://www.npmjs.com/package/dotenv#preload">Preload dotenv</a></li>
-</ul>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Requirements</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Create a new server using <b>hapijs</b></li>
+      <markdown ngPreserveWhitespaces lineNumbers>
+        ```javascript
+        const Hapi = require('hapi');
+        const server = Hapi.server({{'{'}}
+        port: 3000,
+        host: 'localhost'
+        {{'}'}});
 
-<h3 id="Exercise2">Exercise 2</h3>
-<b>Requirements</b>
-<ul>
-  <li>Add a new endpoint that returns a set of customers</li>
-  <li>Using JS classes, create a new class that represents the hapi server</li>
-</ul>
-<b>Considerations</b>
-<ul>
-  <li>The persistent layer don't need to be developed yet</li>
-  <li>The new endpoint should return a list of mock customers</li>
-  <li>The response should be JSON</li>
-  <li>The content-type should be set as application/json</li>
-  <li>Use decorators to manipulate the response</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://hapijs.com/tutorials/getting-started?lang=en_US">HapiJS</a></li>
-  <li><a href="https://hapijs.com/api#response-toolkit">toolkit</a></li>
-  <li><a href="https://hapijs.com/api#response-toolkit">Response</a></li>
-  <li><a href="https://hapijs.com/api#-hresponsevalue">h response</a></li>
-  <li><a href="https://hapijs.com/api#-responsetypemimetype">Content type</a></li>
-  <li><a href="https://hapijs.com/api#-serverdecoratetype-property-method-options">Decorators</a></li>
-</ul>
-<h3>Exercise 3</h3>
-<b>Requirements</b>
-<ul>
-  <li>Register the routes as plugins</li>
-</ul>
-<b>Considerations</b>
-<li>Use Routers, Controllers, QueryManager, factories</li>
-<b>References</b>
-<ul>
-  <li><a href="https://hapijs.com/api#plugins">plugins</a></li>
-  <li><a href="https://www.npmjs.com/package/blipp">Blipp</a></li>
-</ul>
-<b>Notes</b>
-<ul>
-  <li>Begin with the Routers and how do you want them to look like</li>
-</ul>
-<h3>Exercise 4</h3>
-<b>Requirements</b>
-<ul>
-  <li>Add a new route to get a single customer</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://hapijs.com/tutorials">Adding routes</a></li>
-  <li><a href="https://hapijs.com/api#path-parameters">Path params</a></li>
-</ul>
-<h3>Exercise 5</h3>
-<b>Requirements</b>
-<ul>
-  <li>Create a new db in pg</li>
-  <li>Create a connection between the api and the db using sequelize</li>
-  <li>Add migrations</li>
-  <li>Create a model for customers</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://www.npmjs.com/package/sequelize">Sequelize</a></li>
-  <li><a href="https://hapijs.com/api#-serverexposeobj">Exposing properties</a></li>
-  <li><a href="https://www.npmjs.com/package/migrate">migrate</a></li>
-  <li><a href="https://itnext.io/updating-an-sql-database-schema-using-node-js-6c58173a455a">Using db-migrate</a></li>
-  <li><a href="http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-method-define">define models</a></li>
-</ul>
-<b>Notes</b>
-You'll need to create a file called database.json
-{{ '{' }}
-  "dev": {{ '{' }}
-    "driver": "postgres",
-    "host": "db",
-    "port": "5432",
-    "user": "postgres",
-    "password": "admin2342",
-    "database": "postgres"
-{{ '}' }}
-{{ '}' }}
-<h3>Exercise 6 in class</h3>
-<b>requirements</b>
-<ul>
-  <li>Refactor the remaining customer routes to return the data from the db</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="http://docs.sequelizejs.com/manual/models-usage.html">Model Usage</a></li>
-</ul>
-<h3>Exercise 7</h3>
-<b>Requirements</b>
-<ul>
-  <li>Add a signup route</li>
-  <li>Add a login route</li>
-  <li>Create a new table called <b>"Users"</b></li>
-  <li>A JWT should be returned in a successful either in a signup or login</li>
-</ul>
-<b>Considerations</b>
-<ul>
-  <li>A user can't be created if the name is already being used</li>
-  <li>If a request tries to create a user that already exist a conflict status should be send</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://www.npmjs.com/package/bcrypt#to-hash-a-password">How to hash password</a></li>
-  <li><a href="https://www.npmjs.com/package/jsonwebtoken#usage">How to sign a token</a></li>
-  <li><a href="https://medium.com/@siddharthac6/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e">The right way to implement JWT</a></li>
-  <li><a href="http://travistidwell.com/jsencrypt/demo/">How to get your keys</a></li>
-  <li><a href="https://hapijs.com/api#-routeoptionspre">Adding pre conditions to our routes</a></li>
-</ul>
-<b>Notes</b>
-<ul>
-  <li>you can use the following command to create a new migration ./node_modules/db-migrate/bin/db-migrate create</li>
-</ul>
-<h3>Exercise 8</h3>
-<b>Requirements</b>
-<ul>
-  <li>Add a default authentication scheme</li>
-  <li>Add authentication to the customer routes</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://hapijs.com/api#-serverauthschemename-scheme">Auth schemes (token decoding logic)</a></li>
-  <li><a href="https://hapijs.com/tutorials/auth?lang=en_US">Authentication tutorial</a></li>
-</ul>
-<h3>Exercise 9</h3>
-<b>Requirements</b>
-<ul>
-  <li>Add request validators to all your routes</li>
-  <li>Add Documentation of all your apis</li>
-</ul>
-<b>References</b>
-<ul>
-  <li><a href="https://www.npmjs.com/package/joi#example">joi</a></li>
-  <li><a href="https://hapijs.com/api#route.options.validate.params">joi validate params</a></li>
-</ul>
+        const init = async () => {{'{'}}
+        await server.start();
+        console.log(`Server running at: ${{'{'}}server.info.uri{{'}'}})`);
+        {{'}'}});
+
+        process.on('unhandledRejection', (err) => {{'{'}}
+        console.log(err);
+        process.exit(1);
+        {{'}'}}));
+        ```
+      </markdown>
+      <li>Use dotenv to take care of your environment variables</li>
+      <markdown ngPreserveWhitespaces>
+        > .env
+        ```
+        HAPI_HOST=localhost
+        HAPI_PORT=3000
+        ```
+      </markdown>
+      <li>Create a script to start the app in dev environment <b>(use <span class="badge badge-success">nodemon</span> )</b></li>
+      <markdown ngPreserveWhitespaces lineHighlight line="3">
+        ```javascript
+        {{'{'}}
+        "scripts": {{'{'}}
+        "dev": "nodemon -r dotenv/config your_script.js"
+        {{'}'}}
+        {{'}'}}
+        ```
+      </markdown>
+      <span class="badge badge-primary">3</span> The <b> -r</b> flag tells node to require a module using the command line, this applies for <b>node</b> and <b>nodemon</b>
+    </ul>
+  </mat-expansion-panel>
+
+  <!--References-->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      References
+    </mat-expansion-panel-header>
+    <a href="https://hapijs.com/tutorials/getting-started?lang=en_US" class="ref-btn-link">HapiJS</a>
+    <a href="https://www.npmjs.com/package/dotenv#preload" class="ref-btn-link">dotenv</a>
+  </mat-expansion-panel>
+</mat-accordion>
+<!--<a href="/exercises/hapi#Exercise2">Goto E2s</a>-->
+<!--<h3>Exercise 1</h3>-->
+<!--<b>Requirements:</b>-->
+<!--<ul>-->
+  <!--<li>Create a new server using hapijs</li>-->
+  <!--<li>Use dotenv to take care of your env variables</li>-->
+  <!--<li>Create a script to start the app in dev environment <b>(use <span class="badge badge-primary">nodemon</span> in dev)</b></li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://hapijs.com/tutorials/getting-started?lang=en_US">HapiJS</a></li>-->
+  <!--<li><a href="https://www.npmjs.com/package/dotenv#preload">Preload dotenv</a></li>-->
+<!--</ul>-->
+
+<!--<h3 id="Exercise2">Exercise 2</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Add a new endpoint that returns a set of customers</li>-->
+  <!--<li>Using JS classes, create a new class that represents the hapi server</li>-->
+<!--</ul>-->
+<!--<b>Considerations</b>-->
+<!--<ul>-->
+  <!--<li>The persistent layer don't need to be developed yet</li>-->
+  <!--<li>The new endpoint should return a list of mock customers</li>-->
+  <!--<li>The response should be JSON</li>-->
+  <!--<li>The content-type should be set as application/json</li>-->
+  <!--<li>Use decorators to manipulate the response</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://hapijs.com/tutorials/getting-started?lang=en_US">HapiJS</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#response-toolkit">toolkit</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#response-toolkit">Response</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#-hresponsevalue">h response</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#-responsetypemimetype">Content type</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#-serverdecoratetype-property-method-options">Decorators</a></li>-->
+<!--</ul>-->
+<!--<h3>Exercise 3</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Register the routes as plugins</li>-->
+<!--</ul>-->
+<!--<b>Considerations</b>-->
+<!--<li>Use Routers, Controllers, QueryManager, factories</li>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://hapijs.com/api#plugins">plugins</a></li>-->
+  <!--<li><a href="https://www.npmjs.com/package/blipp">Blipp</a></li>-->
+<!--</ul>-->
+<!--<b>Notes</b>-->
+<!--<ul>-->
+  <!--<li>Begin with the Routers and how do you want them to look like</li>-->
+<!--</ul>-->
+<!--<h3>Exercise 4</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Add a new route to get a single customer</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://hapijs.com/tutorials">Adding routes</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#path-parameters">Path params</a></li>-->
+<!--</ul>-->
+<!--<h3>Exercise 5</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Create a new db in pg</li>-->
+  <!--<li>Create a connection between the api and the db using sequelize</li>-->
+  <!--<li>Add migrations</li>-->
+  <!--<li>Create a model for customers</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://www.npmjs.com/package/sequelize">Sequelize</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#-serverexposeobj">Exposing properties</a></li>-->
+  <!--<li><a href="https://www.npmjs.com/package/migrate">migrate</a></li>-->
+  <!--<li><a href="https://itnext.io/updating-an-sql-database-schema-using-node-js-6c58173a455a">Using db-migrate</a></li>-->
+  <!--<li><a href="http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-method-define">define models</a></li>-->
+<!--</ul>-->
+<!--<b>Notes</b>-->
+<!--You'll need to create a file called database.json-->
+<!--{{ '{' }}-->
+  <!--"dev": {{ '{' }}-->
+    <!--"driver": "postgres",-->
+    <!--"host": "db",-->
+    <!--"port": "5432",-->
+    <!--"user": "postgres",-->
+    <!--"password": "admin2342",-->
+    <!--"database": "postgres"-->
+<!--{{ '}' }}-->
+<!--{{ '}' }}-->
+<!--<h3>Exercise 6 in class</h3>-->
+<!--<b>requirements</b>-->
+<!--<ul>-->
+  <!--<li>Refactor the remaining customer routes to return the data from the db</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="http://docs.sequelizejs.com/manual/models-usage.html">Model Usage</a></li>-->
+<!--</ul>-->
+<!--<h3>Exercise 7</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Add a signup route</li>-->
+  <!--<li>Add a login route</li>-->
+  <!--<li>Create a new table called <b>"Users"</b></li>-->
+  <!--<li>A JWT should be returned in a successful either in a signup or login</li>-->
+<!--</ul>-->
+<!--<b>Considerations</b>-->
+<!--<ul>-->
+  <!--<li>A user can't be created if the name is already being used</li>-->
+  <!--<li>If a request tries to create a user that already exist a conflict status should be send</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://www.npmjs.com/package/bcrypt#to-hash-a-password">How to hash password</a></li>-->
+  <!--<li><a href="https://www.npmjs.com/package/jsonwebtoken#usage">How to sign a token</a></li>-->
+  <!--<li><a href="https://medium.com/@siddharthac6/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e">The right way to implement JWT</a></li>-->
+  <!--<li><a href="http://travistidwell.com/jsencrypt/demo/">How to get your keys</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#-routeoptionspre">Adding pre conditions to our routes</a></li>-->
+<!--</ul>-->
+<!--<b>Notes</b>-->
+<!--<ul>-->
+  <!--<li>you can use the following command to create a new migration ./node_modules/db-migrate/bin/db-migrate create</li>-->
+<!--</ul>-->
+<!--<h3>Exercise 8</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Add a default authentication scheme</li>-->
+  <!--<li>Add authentication to the customer routes</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://hapijs.com/api#-serverauthschemename-scheme">Auth schemes (token decoding logic)</a></li>-->
+  <!--<li><a href="https://hapijs.com/tutorials/auth?lang=en_US">Authentication tutorial</a></li>-->
+<!--</ul>-->
+<!--<h3>Exercise 9</h3>-->
+<!--<b>Requirements</b>-->
+<!--<ul>-->
+  <!--<li>Add request validators to all your routes</li>-->
+  <!--<li>Add Documentation of all your apis</li>-->
+<!--</ul>-->
+<!--<b>References</b>-->
+<!--<ul>-->
+  <!--<li><a href="https://www.npmjs.com/package/joi#example">joi</a></li>-->
+  <!--<li><a href="https://hapijs.com/api#route.options.validate.params">joi validate params</a></li>-->
+<!--</ul>-->

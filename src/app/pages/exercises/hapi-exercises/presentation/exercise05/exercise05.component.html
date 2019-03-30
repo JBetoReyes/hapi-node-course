@@ -1,0 +1,80 @@
+<h2 id="exercise-5" class="exercise__item exercise__item--title">Exercise 5</h2>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Requirements</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Create a new db using postgres.</li>
+      <markdown ngPreserveWhitespaces lineNumbers>
+        ```javascript
+        const sequelize = new Sequelize('database', 'username', 'password', {{'{'}}
+          dialect: 'postgres'
+        {{'}'}})
+        ```
+      </markdown>
+      <li>Create a table for the customer endpoints, create them using migrations.</li>
+      <li>Create a new connection between the db and the api using sequelize.</li>
+      <li>Create a sequelize model for customers.</li>
+      <markdown ngPreserveWhitespaces lineNumbers>
+        ```javascript
+        // legacy with `sequelize.define`
+        sequelize.define('Foo', {{'{'}}
+          firstname: Sequelize.STRING,
+          lastname: Sequelize.STRING
+        {{'}'}}, {{'{'}}
+          getterMethods: {{'{'}}
+            fullName() {{'{'}}
+              return this.firstname + ' ' + this.lastname;
+            {{'}'}}
+          {{'}'}},
+
+          setterMethods: {{'{'}}
+            fullName(value) {{'{'}}
+              const names = value.split(' ');
+
+              this.setDataValue('firstname', names.slice(0, -1).join(' '));
+              this.setDataValue('lastname', names.slice(-1).join(' '));
+            {{'}'}}
+          {{'}'}}
+        {{'}'}});
+        ```
+      </markdown>
+    </ul>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Considerations</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>You'll need to create a file called <b>database.json</b> with the following content:</li>
+      <markdown ngPreserveWhitespaces lineNumbers>
+        > database.json
+        ```json
+        {{'{'}}
+          "dev": {{'{'}}
+            "driver": "postgres",
+            "host": "db",
+            "port": "5432",
+            "user": "postgres",
+            "password": "admin2342",
+            "database": "postgres"
+          {{'}'}}
+        {{'}'}}
+        ```
+      </markdown>
+    </ul>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>References</mat-panel-title>
+    </mat-expansion-panel-header>
+    <a href="http://docs.sequelizejs.com/manual/usage.html#postgresql" class="ref-btn-link">Sequelize</a>
+    <a href="http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-method-define" class="ref-btn-link">Sequelize model</a>
+    <a href="https://hapijs.com/api#-serverexposeobj" class="ref-btn-link">Server expose</a>
+    <a href="https://db-migrate.readthedocs.io/en/latest/Getting%20Started/installation/#basic-usage" class="ref-btn-link">DB migrate</a>
+    <a href="https://itnext.io/updating-an-sql-database-schema-using-node-js-6c58173a455a" class="ref-btn-link">DB migrate tutorial</a>
+  </mat-expansion-panel>
+</mat-accordion>
