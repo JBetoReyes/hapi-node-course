@@ -1,2 +1,12 @@
-@import "./custom.scss";
+@import 'abstracts/variables';
+
+@import "vendors/bootstrap";
+
+@import "base/base";
+@import "base/typography";
+
+@import "components/navbar";
+@import "components/markdown";
+@import "components/refButtonLink";
+
 @import "./app.scss";

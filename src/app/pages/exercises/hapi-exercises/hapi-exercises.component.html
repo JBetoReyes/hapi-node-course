@@ -1,5 +1,70 @@
 <div class="app-container">
+  <div class="page-content">
+    <div class="jumbotron">
+      <h1 class="display-4">Exercises</h1>
+      <hr class="my-4">
+      <h2 id="exercise-1" class="exercise__item exercise__item--title">Exercise 1</h2>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Requirements</mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul>
+            <li>Create a new server using <b>hapijs</b></li>
+            <markdown ngPreserveWhitespaces lineNumbers>
+              ```javascript
+              const Hapi = require('hapi');
+              const server = Hapi.server({{'{'}}
+                port: 3000,
+                host: 'localhost'
+              {{'}'}});
+
+              const init = async () => {{'{'}}
+                await server.start();
+                console.log(`Server running at: ${{'{'}}server.info.uri{{'}'}})`);
+              {{'}'}});
+
+              process.on('unhandledRejection', (err) => {{'{'}}
+                console.log(err);
+                process.exit(1);
+              {{'}'}}));
+              ```
+            </markdown>
+            <li>Use dotenv to take care of your environment variables</li>
+            <markdown ngPreserveWhitespaces>
+              > .env
+              ```
+              HAPI_HOST=localhost
+              HAPI_PORT=3000
+              ```
+            </markdown>
+            <li>Create a script to start the app in dev environment <b>(use <span class="badge badge-success">nodemon</span> )</b></li>
+            <markdown ngPreserveWhitespaces lineHighlight line="3">
+              ```javascript
+              {{'{'}}
+                "scripts": {{'{'}}
+                  "dev": "nodemon -r dotenv/config your_script.js"
+                {{'}'}}
+              {{'}'}}
+              ```
+            </markdown>
+            <span class="badge badge-primary">3</span> The <b> -r</b> flag tells node to require a module using the command line, this applies for <b>node</b> and <b>nodemon</b>
+          </ul>
+        </mat-expansion-panel>
+
+        <!--References-->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            References
+          </mat-expansion-panel-header>
+          <a href="https://hapijs.com/tutorials/getting-started?lang=en_US" class="ref-btn-link">HapiJS</a>
+          <a href="https://www.npmjs.com/package/dotenv#preload" class="ref-btn-link">dotenv</a>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <hr class="my-4">
+      <app-exercise02></app-exercise02>
+    </div>
+  </div>
   <h2>Execises</h2>
   <app-exercise01></app-exercise01>
-
 </div>

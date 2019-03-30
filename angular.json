@@ -48,7 +48,7 @@
               "node_modules/prismjs/components/prism-css-extras.min.js",
               "node_modules/prismjs/components/prism-git.min.js",
               "node_modules/prismjs/components/prism-javascript.min.js",
-              "node_modules/prismjs/components/prism-javascript.min.js",
+              "node_modules/prismjs/components/prism-json.min.js",
               "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
               "node_modules/prismjs/plugins/show-language/prism-show-language.js",
               "node_modules/prismjs/plugins/previewers/prism-previewers.js",

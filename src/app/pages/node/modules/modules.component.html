@@ -7,7 +7,7 @@
         A module encapsulates related cÅode into a single unit of code
       </p>
       <hr class="my-4">
-      <h4>Require</h4>
+      <h2>Require</h2>
       <ul>
         <li>Let us load in modules that come bundled with nodejs</li>
         <li>To load our very own modules</li>
@@ -27,7 +27,8 @@
       </p>
       <app-runkit [source]="lodashSource"></app-runkit>
       <hr class="my-4">
-      <p class="h5">
+      <h2>Valid Node Modules</h2>
+      <p>
         To be loaded by the Node.js require() function, a module must be one of the following:
       </p>
       <ul>
@@ -37,9 +38,9 @@
         </li>
         <li>A folder with an index.js file in it.</li>
       </ul>
-      <h4 class="h4">
+      <h2>
         Exercise
-      </h4>
+      </h2>
       <p>Run the following commands in your console.</p>
       <app-command-line [source]="noteFile"></app-command-line>
       <p>In the same directory create a file called note.js</p>
@@ -56,7 +57,6 @@
       <hr>
       <p>We will create a file called <b>app.js</b> with the following content:</p>
       <markdown ngPreserveWhitespaces lineHighlight [line]="'2,3,4'" [lineOffset]="0" data-type="text/html">
-        > app.js
         ```javascript
         console.log('Starting app');
         const {{'{'}} name, lastName, age {{ '}' }} = require('./note.js');
