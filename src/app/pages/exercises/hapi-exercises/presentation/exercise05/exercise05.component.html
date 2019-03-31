@@ -1,4 +1,8 @@
-<h2 id="exercise-5" class="exercise__item exercise__item--title">Exercise 5</h2>
+<div class="exercise__item">
+  <h2 id="exercise-5" class="exercise__item--title">Exercise 5</h2>
+  <mat-checkbox class="exercise__checkbox" [(ngModel)]="snippets">Snippets</mat-checkbox>
+</div>
+
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -6,7 +10,7 @@
     </mat-expansion-panel-header>
     <ul>
       <li>Create a new db using postgres.</li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
         ```javascript
         const sequelize = new Sequelize('database', 'username', 'password', {{'{'}}
           dialect: 'postgres'
@@ -16,7 +20,7 @@
       <li>Create a table for the customer endpoints, create them using migrations.</li>
       <li>Create a new connection between the db and the api using sequelize.</li>
       <li>Create a sequelize model for customers.</li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
         ```javascript
         // legacy with `sequelize.define`
         sequelize.define('Foo', {{'{'}}
@@ -49,7 +53,7 @@
     </mat-expansion-panel-header>
     <ul>
       <li>You'll need to create a file called <b>database.json</b> with the following content:</li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
         > database.json
         ```json
         {{'{'}}

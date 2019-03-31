@@ -1,4 +1,8 @@
-<h2 id="exercise-3" class="exercise__item exercise__item--title">Exercise 3</h2>
+<div class="exercise__item">
+  <h2 id="exercise-3" class="exercise__item--title">Exercise 3</h2>
+  <mat-checkbox class="exercise__checkbox" [(ngModel)]="snippets">Snippets</mat-checkbox>
+</div>
+
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -6,7 +10,7 @@
     </mat-expansion-panel-header>
     <ul>
       <li>Register the routes as plugins.</li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
       ```javascript
         const plugin = {{'{'}}
           name: 'test',
@@ -24,7 +28,7 @@
         ```
       </markdown>
       <li>Add <b>Blipp</b> for a better visualization of the available routes.</li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
         ```javascript
         await server.register({{'{'}} plugin: Blipp, options: {{'{'}} showAuth: true {{'}'}} {{'}'}});
         ```

@@ -23,11 +23,16 @@ body {
   height: auto;
 }
 
+.page-content {
+  height: 100%;
+  padding: 10px 190px;
+}
+
 li {
   margin-left: 2rem;
 }
 
-.page-content {
-  height: 100%;
-  padding: 10px 190px;
+input[type='checkbox'],
+input[id^="mat-checkbox"] {
+  display: none;
 }

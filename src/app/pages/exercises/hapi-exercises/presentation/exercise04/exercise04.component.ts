@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercise04.component.scss']
 })
 export class Exercise04Component implements OnInit {
+  snippets = false;
 
   constructor() { }
 

@@ -1,4 +1,8 @@
-<h2 id="exercise-2" class="exercise__item exercise__item--title">Exercise 2</h2>
+<div class="exercise__item">
+  <h2 id="exercise-2" class="exercise__item--title">Exercise 2</h2>
+  <mat-checkbox class="exercise__checkbox" [(ngModel)]="snippets">Snippets</mat-checkbox>
+</div>
+
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -6,7 +10,7 @@
     </mat-expansion-panel-header>
     <ul>
       <li>Add a new endpoint that returns a set of customers.</li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
         ```json
         {{'{'}}
           "data": [

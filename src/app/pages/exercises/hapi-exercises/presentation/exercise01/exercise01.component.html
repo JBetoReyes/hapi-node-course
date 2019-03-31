@@ -1,3 +1,8 @@
+<div class="exercise__item">
+  <h2 id="exercise-1" class="exercise__item--title">Exercise 1</h2>
+  <mat-checkbox class="exercise__checkbox" [(ngModel)]="snippets">Snippets</mat-checkbox>
+</div>
+
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -5,7 +10,7 @@
     </mat-expansion-panel-header>
     <ul>
       <li>Create a new server using <b>hapijs</b></li>
-      <markdown ngPreserveWhitespaces lineNumbers>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineNumbers>
         ```javascript
         const Hapi = require('hapi');
         const server = Hapi.server({{'{'}}
@@ -25,7 +30,7 @@
         ```
       </markdown>
       <li>Use dotenv to take care of your environment variables</li>
-      <markdown ngPreserveWhitespaces>
+      <markdown *ngIf="snippets" ngPreserveWhitespaces>
         > .env
         ```
         HAPI_HOST=localhost
@@ -33,7 +38,7 @@
         ```
       </markdown>
       <li>Create a script to start the app in dev environment <b>(use <span class="badge badge-success">nodemon</span> )</b></li>
-      <markdown ngPreserveWhitespaces lineHighlight line="3">
+      <markdown *ngIf="snippets" ngPreserveWhitespaces lineHighlight line="3">
         ```javascript
         {{'{'}}
         "scripts": {{'{'}}
@@ -42,7 +47,10 @@
         {{'}'}}
         ```
       </markdown>
-      <span class="badge badge-primary">3</span> The <b> -r</b> flag tells node to require a module using the command line, this applies for <b>node</b> and <b>nodemon</b>
+      <p *ngIf="snippets">
+        <span class="badge badge-primary">3</span> The <b> -r</b> flag tells node to require a module using the command line, this applies for <b>node</b> and <b>nodemon</b>
+      </p>
+
     </ul>
   </mat-expansion-panel>
 

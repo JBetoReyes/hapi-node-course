@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Exercise01Component implements OnInit {
 
+  snippets = false;
+
   constructor() { }
 
   ngOnInit() {
