@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class RunkitComponent implements OnInit {
 
   @Input() source = '';
+  @Input() preamble = '';
 
   constructor() { }
 

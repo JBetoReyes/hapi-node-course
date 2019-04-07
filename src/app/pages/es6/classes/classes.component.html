@@ -1,0 +1,37 @@
+<div class="app-container">
+  <div class="page-content">
+    <div class="jumbotron">
+      <h1 class="display-4">Classes</h1>
+      Classes are declared with the <span class="badge badge-primary">class</span> keyword. We will use function expression syntax to initialize a function and
+      class expression syntax to initialize a class.
+      <markdown ngPreserveWhitespaces lineHighlight [line]="'1,5,8'" [lineOffset]="0" data-type="text/html">
+        ```javascript
+        class Shape {{'{'}}
+
+          constructor(sides) {{'{'}}
+            console.log('Shape Class');
+            this._sides = sides;
+          {{'}'}}
+
+          get sides() {{'{'}}
+            return this._sides;
+          {{'}'}}
+
+          calculatePerimeter(sideLength) {{'{'}}
+            return this._sides * sideLength;
+          {{'}'}}
+        {{'}'}}
+        ```
+      </markdown>
+
+      <p><span class="badge badge-primary">1</span> Defines the shape class.</p>
+      <p>
+        <span class="badge badge-primary">5</span> You need to use either a constructor or a getter to define an instance variable.
+      </p>
+      <p>
+        <span class="badge badge-primary">8</span> We use both a constructor and a getter to define the <b>sides</b> instance variable
+      </p>
+      <app-runkit [preamble]="shapeClass" [source]="circleClass"></app-runkit>
+    </div>
+  </div>
+</div>
