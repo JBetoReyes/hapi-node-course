@@ -12,6 +12,7 @@ import {RunkitModule} from './shared/runkit/runkit.module';
 import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
 import {ExercisesModule} from './pages/exercises/exercises.module';
 import { ClassesComponent } from './pages/es6/classes/classes.component';
+import { ArrowComponent } from './pages/es6/arrow/arrow.component';
 
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -36,7 +37,8 @@ export function markedOptions(): MarkedOptions {
   declarations: [
     AppComponent,
     HeaderComponent,
-    ClassesComponent
+    ClassesComponent,
+    ArrowComponent
   ],
   imports: [
     BrowserModule,

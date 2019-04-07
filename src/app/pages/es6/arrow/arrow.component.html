@@ -1,0 +1,23 @@
+<div class="app-container">
+  <div class="page-content">
+    <div class="jumbotron">
+      <h1 class="display-4">Arrow Functions</h1>
+      Arrow functions (also known as fat arrow functions) have a shorter syntax compared to traditional function expressions
+      and lexically bind the this value. Arrow functions are also always anonymous.
+      <hr class="my-4">
+      Here we are using the shortest form, where the body is a simple expression and we can drop the parenthesis around
+      the parameter since there is only one:
+      <app-runkit [source]="mapCode"></app-runkit>
+      <hr class="my-4">
+      If we want multiple parameters, we can add the parenthesis and curly braces back:
+      <app-runkit [preamble]="numbers" [source]="reduceCode" ></app-runkit>
+      <hr class="my-4">
+      Finally, more complex multistatement arrow functions can use curly braces:
+      <app-runkit [preamble]="numbers" [source]="multiStatement"></app-runkit>
+      <hr class="my-4">
+      Arrow functions can also make your code less complex since they'll use the "this" of the surrounding scope, instead
+      of introducing their own. This means you can avoid having to bind in many cases:
+      <app-runkit [source]="bind"></app-runkit>
+    </div>
+  </div>
+</div>
