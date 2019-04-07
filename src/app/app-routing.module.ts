@@ -4,6 +4,7 @@ import { ModulesComponent } from './pages/node/modules/modules.component';
 import {HapiExercisesComponent} from './pages/exercises/hapi-exercises/hapi-exercises.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'node/modules', pathMatch: 'full'  },
   { path: 'node/modules', component: ModulesComponent },
   { path: 'exercises/hapi', component: HapiExercisesComponent }
 ];
