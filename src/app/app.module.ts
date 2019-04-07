@@ -13,6 +13,7 @@ import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
 import {ExercisesModule} from './pages/exercises/exercises.module';
 import { ClassesComponent } from './pages/es6/classes/classes.component';
 import { ArrowComponent } from './pages/es6/arrow/arrow.component';
+import { DestructuringComponent } from './pages/es6/destructuring/destructuring.component';
 
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -38,7 +39,8 @@ export function markedOptions(): MarkedOptions {
     AppComponent,
     HeaderComponent,
     ClassesComponent,
-    ArrowComponent
+    ArrowComponent,
+    DestructuringComponent
   ],
   imports: [
     BrowserModule,

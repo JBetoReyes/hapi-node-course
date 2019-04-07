@@ -4,6 +4,7 @@ import { ModulesComponent } from './pages/node/modules/modules.component';
 import {HapiExercisesComponent} from './pages/exercises/hapi-exercises/hapi-exercises.component';
 import {ClassesComponent} from './pages/es6/classes/classes.component';
 import {ArrowComponent} from './pages/es6/arrow/arrow.component';
+import {DestructuringComponent} from './pages/es6/destructuring/destructuring.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'node/modules', pathMatch: 'full'  },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'exercises/hapi', component: HapiExercisesComponent },
   { path: 'es6/classes', component: ClassesComponent },
   { path: 'es6/arrow', component: ArrowComponent },
+  { path: 'es6/destructuring', component: DestructuringComponent }
 ];
 
 @NgModule({
