@@ -14,6 +14,7 @@ import {ExercisesModule} from './pages/exercises/exercises.module';
 import { ClassesComponent } from './pages/es6/classes/classes.component';
 import { ArrowComponent } from './pages/es6/arrow/arrow.component';
 import { DestructuringComponent } from './pages/es6/destructuring/destructuring.component';
+import { PromisesComponent } from './pages/asyncnawait/promises/promises.component';
 
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -40,7 +41,8 @@ export function markedOptions(): MarkedOptions {
     HeaderComponent,
     ClassesComponent,
     ArrowComponent,
-    DestructuringComponent
+    DestructuringComponent,
+    PromisesComponent
   ],
   imports: [
     BrowserModule,
