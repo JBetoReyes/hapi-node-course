@@ -25,7 +25,7 @@
     "angular-runkit": "^0.6.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "ngx-markdown": "^7.1.4",
     "popper.js": "^1.14.7",
     "prismjs": "^1.15.0",
